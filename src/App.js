@@ -6,56 +6,50 @@ import gsap from "gsap";
 import "./App.scss";
 
 const App = () => {
-  // Ref for our element
   const sectionRef = useRef(null);
-  // All the ref to be observed
   const intersection = useIntersection(sectionRef, {
     root: null,
     rootMargin: "0px",
     threshold: 0.2
   });
-
-  // Animation for fading in
   const fadeIn = element => {
     gsap.to(element, 1, {
       opacity: 1,
       y: -60,
-      ease: "power4.out",
+      ease: "Power4.out",
       stagger: {
         amount: 0.3
       }
     });
   };
-  // Animation for fading out
   const fadeOut = element => {
     gsap.to(element, 1, {
       opacity: 0,
       y: -20,
-      ease: "power4.out"
+      ease: "Power4.out"
     });
   };
 
-  // checking to see when the vieport is visible to the user
   intersection && intersection.intersectionRatio < 0.2
     ? fadeOut(".fadeIn")
     : fadeIn(".fadeIn");
 
   return (
     <>
-      <div className='header'>
-        <div className='sm-btn'>
-          <img src={back} alt='back arrow' />
+      <div className="header">
+        <div className="sm-btn">
+          <img src={back} alt="back arrow" />
         </div>
         <h5>About</h5>
-        <div className='sm-btn'>
-          <img src={send} alt='' />
+        <div className="sm-btn">
+          <img src={send} alt="" />
         </div>
       </div>
-      <div className='sectionFirst'>
-        <div className='pic'>
+      <div className="sectionFirst">
+        <div className="pic">
           <img
-            src='https://cdn.dribbble.com/users/997665/screenshots/9634478/media/8ad68f67fdbfb09bc054937edecf2d27.png'
-            alt=''
+            src="https://cdn.dribbble.com/users/997665/screenshots/9634478/media/8ad68f67fdbfb09bc054937edecf2d27.png"
+            alt=""
           />
         </div>
         <h3>Alara Frank</h3>
@@ -69,10 +63,10 @@ const App = () => {
           pretium.
         </p>
       </div>
-      <div className='sectionSecond'>
-        <div ref={sectionRef} className='inner'>
-          <h3 className='fadeIn'>The talk of what makes a champion.</h3>
-          <p className='fadeIn'>
+      <div className="sectionSecond">
+        <div ref={sectionRef} className="inner">
+          <h3 className="fadeIn">The talk of what makes a champion.</h3>
+          <p className="fadeIn">
             Massa id neque aliquam vestibulum. Nibh praesent tristique magna
             sit. Auctor eu augue ut lectus arcu bibendum at varius. Nam aliquam
             sem et tortor consequat id. Nunc mi ipsum faucibus vitae aliquet
@@ -87,8 +81,8 @@ const App = () => {
             arcu risus quis. Lectus sit amet est placerat in egestas erat
             imperdiet. Cum sociis natoque penatibus et magnis dis.
           </p>
-          <div className='btn-row fadeIn'>
-            <a href='/'>Click here bruh</a>
+          <div className="btn-row fadeIn">
+            <a href="/">Click here bruh</a>
           </div>
         </div>
       </div>
